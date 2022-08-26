@@ -7,6 +7,7 @@ Mac Installation
 brew install gnupg
 ```
 
+## Getting Started
 Step to test locally
 ```
 # STEP 1: create your own key pair, then provide the userid.
