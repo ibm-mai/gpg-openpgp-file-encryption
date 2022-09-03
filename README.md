@@ -33,11 +33,11 @@ gpg --output outputs/decrypted-sample.pdf --decrypt outputs/sample.pdf.gpg
 
 ### Tips:
 Exporting public key and private key
-note: --armor -> refers to output in ascii format
+note: --armor refers to output in ascii format
 ```
 # Public Key
 gpg --list-keys
-gpg --armor --output my-private-key.gpg --export <USER_ID>
+gpg --armor --output my-public-key.gpg --export <USER_ID>
 // or
 gpg --armor --export <USER_ID> > my-private-key.gpg 
 ```
@@ -45,7 +45,7 @@ gpg --armor --export <USER_ID> > my-private-key.gpg
 ```
 # Private Key
 gpg --list-secret-keys
-gpg --armor --output my-public-key.gpg --export <USER_ID>
+gpg --armor --output my-private-key.gpg --export-secret-key <USER_ID>
 // or
-gpg --armor --export <USER_ID>  > my-public-key.gpg
+gpg --armor --export-secret-key <USER_ID> > my-private-key.gpg 
 ```

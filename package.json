@@ -1,0 +1,27 @@
+{
+  "name": "gpg-openpgp-file-encryption",
+  "version": "1.0.0",
+  "description": "Example of using gpg and openpgp to encrypt files",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibm-mai/gpg-openpgp-file-encryption.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibm-mai/gpg-openpgp-file-encryption/issues"
+  },
+  "homepage": "https://github.com/ibm-mai/gpg-openpgp-file-encryption#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "openpgp": "^5.5.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.2"
+  }
+}
