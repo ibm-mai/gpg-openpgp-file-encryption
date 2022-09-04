@@ -7,7 +7,7 @@ async function main() {
   // LAB01: use public key to encrypt sample.pdf and decrypt it using private key
   // ======
   await encrypt('samples/sample.pdf', path.resolve('outputs'))
-  await decrypt('outputs/sample.pdf.pgp', path.resolve('outputs'))
+  await decrypt('outputs/sample.pdf.gpg', path.resolve('outputs'))
 
   // LAB02: use gpg to encrypt the sample.jpg and decrypt it using node openpgp
   // =====
