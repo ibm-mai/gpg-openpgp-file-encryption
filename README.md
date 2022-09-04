@@ -4,6 +4,9 @@ Example of using gpg and openpgp to encrypting/decrypting files.
 - [GPG and OpenPGP File Encryption](#gpg-and-openpgp-file-encryption)
   - [Installation method](#installation-method)
   - [Getting Started with GPG](#getting-started-with-gpg)
+  - [Exporting Public Key and Private Key](#exporting-public-key-and-private-key)
+    - [Exporting public key](#exporting-public-key)
+    - [Exporting private key](#exporting-private-key)
   - [Getting Started with Node OpenPGP](#getting-started-with-node-openpgp)
 ## Installation method
 Mac Installation
@@ -19,7 +22,7 @@ gpg --gen-key
 ```
 2. Try encrypting a file
 - Encrypting sample.pdf and save as encrypted-gpg-sample.pdf.gpg with public key
-- The file will be only decrypted with the application private key.
+- The can only be decrypted with the application private key.
 ```
 gpg --output outputs/encrypted-gpg-sample.pdf.gpg --encrypt --recipient <USER_ID> samples/sample.pdf
 ```
@@ -30,23 +33,21 @@ gpg --output outputs/encrypted-gpg-sample.pdf.gpg --encrypt --recipient <USER_ID
 gpg --output outputs/decrypted-gpg-sample.pdf --decrypt outputs/encrypted-gpg-sample.pdf.gpg
 ```
 
-Tips:
-Exporting public key and private key
+## Exporting Public Key and Private Key
 note: --armor refers to output in ascii format
+### Exporting public key
 ```
-# Public Key
 gpg --list-keys
-gpg --armor --output my-public-key.gpg --export <USER_ID>
+gpg --armor --output key/my-public-key.gpg --export <USER_ID>
 // or
-gpg --armor --export <USER_ID> > my-private-key.gpg 
+gpg --armor --export <USER_ID> > key/my-private-key.gpg 
 ```
-
+### Exporting private key
 ```
-# Private Key
 gpg --list-secret-keys
-gpg --armor --output my-private-key.gpg --export-secret-key <USER_ID>
+gpg --armor --output key/my-private-key.gpg --export-secret-key <USER_ID>
 // or
-gpg --armor --export-secret-key <USER_ID> > my-private-key.gpg 
+gpg --armor --export-secret-key <USER_ID> > key/my-private-key.gpg 
 ```
 
 ## Getting Started with Node OpenPGP
