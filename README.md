@@ -2,13 +2,13 @@
 Example of using gpg and openpgp to encrypting/decrypting files.
 
 - [GPG and OpenPGP File Encryption](#gpg-and-openpgp-file-encryption)
-  - [Installation method](#installation-method)
+  - [Installation method for GPG](#installation-method-for-gpg)
   - [Getting Started with GPG](#getting-started-with-gpg)
   - [Exporting Public Key and Private Key](#exporting-public-key-and-private-key)
     - [Exporting public key](#exporting-public-key)
     - [Exporting private key](#exporting-private-key)
   - [Getting Started with Node OpenPGP](#getting-started-with-node-openpgp)
-## Installation method
+## Installation method for GPG
 Mac Installation
 ```
 brew install gnupg
