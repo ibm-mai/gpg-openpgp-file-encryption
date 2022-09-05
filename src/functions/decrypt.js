@@ -25,7 +25,7 @@ const decrypt = async (inputFilePath, outputFilePath) => {
     });
 
     const newFileName = inputFilePath.split('/')[1].replace('.gpg', '')
-    console.log(`Writing to ...` + path.join(outputFilePath, newFileName))
+    console.log(`Writing to: ` + path.join(outputFilePath, newFileName))
     fs.writeFileSync(path.join(outputFilePath, newFileName), decryptedData.data)
   } catch (error) {
     console.log(error.message)
