@@ -80,7 +80,7 @@ Note:
 
 **Example**
 ```
-$ script/symmetric-encrypt.sh -ps serenadefamily aws_path new
+$ script/symmetric-encrypt.sh --passphrase mypassword aws_path new
 ```
 
 **Automatically copy to new folder**

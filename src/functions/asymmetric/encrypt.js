@@ -25,7 +25,7 @@ const encrypt = async (inputFilePath, outputFilePath) => {
     });
 
     console.log(`Writing to: ` + path.join(outputFilePath, inputFilePath.split('/')[1] + '.gpg'))
-    fs.writeFileSync(path.resolve(outputFilePath, inputFilePath.split('/')[1] + ".gpg"), encryptedData)
+    fs.writeFileSync(path.join(outputFilePath,path.basename(inputFilePath).replace('.gpg', '')), encryptedData)
   } catch (error) {
     console.log(error.message)
   }

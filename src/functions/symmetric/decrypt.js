@@ -2,7 +2,7 @@ const openpgp = require('openpgp'); // use as CommonJS, AMD, ES6 module or via w
 const fs = require('fs')
 const path = require('path')
 
-const decrypt = async (inputFilePath, outputFilePath) => {
+const symmetric_decrypt = async (inputFilePath, outputFilePath) => {
   console.log(`[Decrypt] ${path.resolve(inputFilePath)}`)
   // get private key in armored format
   const privateKeyArmored = process.env.PRIVATE_KEY; // get encrypted private key
@@ -12,19 +12,19 @@ const decrypt = async (inputFilePath, outputFilePath) => {
     const encryptedData = fs.readFileSync(path.resolve(inputFilePath))
 
     // read message from encrypted data
-    const message = await openpgp.readMessage({ binaryMessage: encryptedData})
+    const message = await openpgp.readMessage({ binaryMessage: encryptedData })
 
     // read private key
-    const privateKey = await openpgp.readPrivateKey({ armoredKey: privateKeyArmored})
+    const privateKey = await openpgp.readPrivateKey({ armoredKey: privateKeyArmored })
 
     // decrypt the message with private key
     const decryptedData = await openpgp.decrypt({
       message,
-      decryptionKeys: privateKey,
+      passwords: process.env.PASSWORD,
       format: 'binary'
     });
 
-    const newFileName = inputFilePath.split('/')[1].replace('.gpg', '')
+    const newFileName = path.basename(inputFilePath).replace('.gpg', '')
     console.log(`Writing to: ` + path.join(outputFilePath, newFileName))
     fs.writeFileSync(path.join(outputFilePath, newFileName), decryptedData.data)
   } catch (error) {
@@ -32,4 +32,4 @@ const decrypt = async (inputFilePath, outputFilePath) => {
   }
 };
 
-module.exports = decrypt
+module.exports = symmetric_decrypt

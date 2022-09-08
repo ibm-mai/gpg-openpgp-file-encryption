@@ -1,3 +1,5 @@
 node_modules
 key/*
 .env
+aws_path
+s3share
