@@ -16,7 +16,7 @@ async function main() {
   // await decrypt('outputs/gpg-sample.jpg.gpg', path.resolve('outputs'))
 
   // SYMMETRIC DECRYPTION
-  await symmetric_decrypt('s3share/aws_path/20220804/5db6e6ec-228b-4c61-b79c-002a907b81ad/master_house_registration.png.gpg', path.resolve('outputs'))
+  // await symmetric_decrypt('s3share/aws_path/20220804/5db6e6ec-228b-4c61-b79c-002a907b81ad/master_house_registration.png.gpg', path.resolve('outputs'))
 }
 
 main()
