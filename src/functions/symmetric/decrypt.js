@@ -4,8 +4,6 @@ const path = require('path')
 
 const symmetric_decrypt = async (inputFilePath, outputFilePath) => {
   console.log(`[Decrypt] ${path.resolve(inputFilePath)}`)
-  // get private key in armored format
-  const privateKeyArmored = process.env.PRIVATE_KEY; // get encrypted private key
 
   try {
     // read the encrypted data
@@ -14,12 +12,9 @@ const symmetric_decrypt = async (inputFilePath, outputFilePath) => {
     // read message from encrypted data
     const message = await openpgp.readMessage({ binaryMessage: encryptedData })
 
-    // read private key
-    const privateKey = await openpgp.readPrivateKey({ armoredKey: privateKeyArmored })
-
     // decrypt the message with private key
     const decryptedData = await openpgp.decrypt({
-      message,
+      message: message,
       passwords: process.env.PASSWORD,
       format: 'binary'
     });
