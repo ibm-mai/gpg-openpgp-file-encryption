@@ -1,5 +1,4 @@
-# Asymmetric Encryption
-## GPG and OpenPGP File Encryption
+# GPG and OpenPGP File Encryption
 Example of using gpg and openpgp to encrypting/decrypting files.
 
 - [Asymmetric Encryption](#asymmetric-encryption)
